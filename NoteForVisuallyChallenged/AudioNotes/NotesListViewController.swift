@@ -17,10 +17,10 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
 
     // fake contents' array for testing only.
     // replace the codes to get the actual data later
-    let firstTags = ["食譜", "學校", "學校", "工讀", "孔雀東南飛", "橄欖樹"]
-    let secondTags = ["乳酪蛋糕", "期中考範圍", "法文", "班表", "全文", "齊豫"]
-    let thirdTags = ["", "泰文", "文法", "四月", "", "歌詞"]
-    let dateOrTime = ["上午 1:18", "昨天", "週二", "3/24", "3/19", "3/17"]
+    let firstTags = ["食譜", "學校", "French", "工讀", "明天的oral presentation", "橄欖樹"]
+    let secondTags = ["蛋包飯", "期中考範圍", "Grammatical rules of nouns", "班表", "內容", "齊豫"]
+    let thirdTags = ["", "泰文", "", "四月", "", "歌詞"]
+    let dateOrTime = ["上午 1:18", "昨天", "週二", "3月24日", "3月19日", "3月17日"]
     
     // get the number of the items
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -73,12 +73,11 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
     @IBAction func speechBtnTapped(_ sender: Any) {
         for i in 0...self.firstTags.count-1{
             print (i)
-            vc.speak("第"+String(i+1)+"則筆記")
-            //vc.speak("記錄時間")
-            //vc.speak(self.dateOrTime[i])
-                vc.speak(self.firstTags[i])
-                vc.speak(self.secondTags[i])
-                vc.speak(self.thirdTags[i])
+            vc.speak("第"+String(i+1)+"則")
+            vc.speak(""+self.dateOrTime[i]+"的筆記，關於")
+            vc.speak(self.firstTags[i])
+            vc.speak(self.secondTags[i])
+            vc.speak(self.thirdTags[i])
             
         }
         

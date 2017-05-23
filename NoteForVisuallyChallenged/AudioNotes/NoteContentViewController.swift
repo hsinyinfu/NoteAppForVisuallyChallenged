@@ -10,18 +10,16 @@ import UIKit
 
 class NoteContentViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    let vc = VoiceCore()
+    
+    @IBAction func speechBtnTapped(_ sender: Any) {
+        vc.speak("不要問我從哪裡來，我的故鄉在遠方，為什麼流浪？流浪遠方，流浪。")
+        vc.speak("記錄於三月十七日。")
     }
     
 
+    
     /*
     // MARK: - Navigation
 

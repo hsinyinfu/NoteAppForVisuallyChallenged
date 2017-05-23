@@ -146,7 +146,7 @@ class VoiceCore:UIViewController, SFSpeechRecognizerDelegate {
     func speak(_ sender: String) {
         myUtterance = AVSpeechUtterance(string: sender)
         myUtterance.voice =  AVSpeechSynthesisVoice(language: "zh")
-        myUtterance.rate = 0.5
+        myUtterance.rate = 0.53
         synth.speak(myUtterance)
     }
     
