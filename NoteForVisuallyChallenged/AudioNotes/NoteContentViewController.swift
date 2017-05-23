@@ -1,5 +1,5 @@
 //
-//  singleNoteViewController.swift
+//  NoteContentViewController.swift
 //  NotesForTheVisuallyChallenged
 //
 //  Created by Salim Fang on 2017/5/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class singleNoteViewController: UIViewController {
+class NoteContentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

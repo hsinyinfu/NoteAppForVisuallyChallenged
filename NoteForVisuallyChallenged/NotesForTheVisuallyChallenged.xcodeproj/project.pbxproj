@@ -8,28 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		9EA46E541ED2DF5800A844C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA46E531ED2DF5800A844C9 /* AppDelegate.swift */; };
-		9EA46E561ED2DF5800A844C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA46E551ED2DF5800A844C9 /* ViewController.swift */; };
+		9EA46E561ED2DF5800A844C9 /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA46E551ED2DF5800A844C9 /* NotesListViewController.swift */; };
 		9EA46E591ED2DF5800A844C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EA46E571ED2DF5800A844C9 /* Main.storyboard */; };
 		9EA46E5B1ED2DF5800A844C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EA46E5A1ED2DF5800A844C9 /* Assets.xcassets */; };
 		9EA46E5E1ED2DF5800A844C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EA46E5C1ED2DF5800A844C9 /* LaunchScreen.storyboard */; };
 		9EA46E661ED2DFB300A844C9 /* NoteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA46E651ED2DFB300A844C9 /* NoteCollectionViewCell.swift */; };
-		9EA46E681ED36C6D00A844C9 /* addViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA46E671ED36C6D00A844C9 /* addViewController.swift */; };
-		9EA46E6A1ED36CC300A844C9 /* editViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA46E691ED36CC300A844C9 /* editViewController.swift */; };
-		9EA46E6C1ED36D4000A844C9 /* singleNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA46E6B1ED36D4000A844C9 /* singleNoteViewController.swift */; };
+		9EA46E681ED36C6D00A844C9 /* NoteContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA46E671ED36C6D00A844C9 /* NoteContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9EA46E501ED2DF5800A844C9 /* NotesForTheVisuallyChallenged.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesForTheVisuallyChallenged.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EA46E531ED2DF5800A844C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9EA46E551ED2DF5800A844C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9EA46E551ED2DF5800A844C9 /* NotesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewController.swift; sourceTree = "<group>"; };
 		9EA46E581ED2DF5800A844C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9EA46E5A1ED2DF5800A844C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EA46E5D1ED2DF5800A844C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EA46E5F1ED2DF5800A844C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EA46E651ED2DFB300A844C9 /* NoteCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewCell.swift; sourceTree = "<group>"; };
-		9EA46E671ED36C6D00A844C9 /* addViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addViewController.swift; sourceTree = "<group>"; };
-		9EA46E691ED36CC300A844C9 /* editViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = editViewController.swift; sourceTree = "<group>"; };
-		9EA46E6B1ED36D4000A844C9 /* singleNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = singleNoteViewController.swift; sourceTree = "<group>"; };
+		9EA46E671ED36C6D00A844C9 /* NoteContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,11 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				9EA46E531ED2DF5800A844C9 /* AppDelegate.swift */,
-				9EA46E551ED2DF5800A844C9 /* ViewController.swift */,
+				9EA46E551ED2DF5800A844C9 /* NotesListViewController.swift */,
 				9EA46E571ED2DF5800A844C9 /* Main.storyboard */,
-				9EA46E6B1ED36D4000A844C9 /* singleNoteViewController.swift */,
-				9EA46E691ED36CC300A844C9 /* editViewController.swift */,
-				9EA46E671ED36C6D00A844C9 /* addViewController.swift */,
+				9EA46E671ED36C6D00A844C9 /* NoteContentViewController.swift */,
 				9EA46E651ED2DFB300A844C9 /* NoteCollectionViewCell.swift */,
 				9EA46E5A1ED2DF5800A844C9 /* Assets.xcassets */,
 				9EA46E5C1ED2DF5800A844C9 /* LaunchScreen.storyboard */,
@@ -149,10 +143,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EA46E661ED2DFB300A844C9 /* NoteCollectionViewCell.swift in Sources */,
-				9EA46E561ED2DF5800A844C9 /* ViewController.swift in Sources */,
-				9EA46E6C1ED36D4000A844C9 /* singleNoteViewController.swift in Sources */,
-				9EA46E681ED36C6D00A844C9 /* addViewController.swift in Sources */,
-				9EA46E6A1ED36CC300A844C9 /* editViewController.swift in Sources */,
+				9EA46E561ED2DF5800A844C9 /* NotesListViewController.swift in Sources */,
+				9EA46E681ED36C6D00A844C9 /* NoteContentViewController.swift in Sources */,
 				9EA46E541ED2DF5800A844C9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

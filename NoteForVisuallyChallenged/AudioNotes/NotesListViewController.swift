@@ -8,7 +8,7 @@
 
 
 import UIKit
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class NotesListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     let reuseIdentifier = "cell" // cell identifier
     
@@ -66,6 +66,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // show a single note (tho the codes shoudln't be here. gonna fix it later.)
         print("You selected cell #\(indexPath.item)!")
-        performSegue(withIdentifier: "segueToShowANote", sender: nil)
+        performSegue(withIdentifier: "OpenNote", sender: nil)
     }
 }

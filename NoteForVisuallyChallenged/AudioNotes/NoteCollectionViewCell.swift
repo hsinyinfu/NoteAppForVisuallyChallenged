@@ -20,7 +20,7 @@ class NoteCollectionViewCell: UICollectionViewCell {
     // make a gradient-colored background
     let definedGray = UIColor(red: 30, green: 30, blue: 30, alpha: 1)
     
-    override open class var layerClass: AnyClass {
+    override internal class var layerClass: AnyClass {
             get{
                 return CAGradientLayer.classForCoder()
         }
