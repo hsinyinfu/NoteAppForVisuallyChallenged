@@ -12,6 +12,8 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
     
     let reuseIdentifier = "cell" // cell identifier
     
+    @IBOutlet weak var collections: UICollectionView!
+    let vc = VoiceCore()
 
     // fake contents' array for testing only.
     // replace the codes to get the actual data later
@@ -67,5 +69,18 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
         // show a single note (tho the codes shoudln't be here. gonna fix it later.)
         print("You selected cell #\(indexPath.item)!")
         performSegue(withIdentifier: "OpenNote", sender: nil)
+    }
+    @IBAction func speechBtnTapped(_ sender: Any) {
+        for i in 0...self.firstTags.count-1{
+            print (i)
+            vc.speak("第"+String(i+1)+"則筆記")
+            //vc.speak("記錄時間")
+            //vc.speak(self.dateOrTime[i])
+                vc.speak(self.firstTags[i])
+                vc.speak(self.secondTags[i])
+                vc.speak(self.thirdTags[i])
+            
+        }
+        
     }
 }

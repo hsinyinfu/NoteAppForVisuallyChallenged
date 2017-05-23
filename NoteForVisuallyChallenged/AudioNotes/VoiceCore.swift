@@ -16,6 +16,10 @@ class VoiceCore:UIViewController, SFSpeechRecognizerDelegate {
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
+    //for AVFoundation
+    let synth = AVSpeechSynthesizer()
+    var myUtterance = AVSpeechUtterance(string: "")
+    
    /*
     func startRecording() {
         
@@ -92,10 +96,7 @@ class VoiceCore:UIViewController, SFSpeechRecognizerDelegate {
         }
     }
     
-    //for AVFoundation
-    let synth = AVSpeechSynthesizer()
-    var myUtterance = AVSpeechUtterance(string: "")
-    
+
     
     
     func load() {
@@ -142,8 +143,9 @@ class VoiceCore:UIViewController, SFSpeechRecognizerDelegate {
         }
     }
     */
-    func speek( sender: String) {
+    func speak(_ sender: String) {
         myUtterance = AVSpeechUtterance(string: sender)
+        myUtterance.voice =  AVSpeechSynthesisVoice(language: "zh")
         myUtterance.rate = 0.5
         synth.speak(myUtterance)
     }

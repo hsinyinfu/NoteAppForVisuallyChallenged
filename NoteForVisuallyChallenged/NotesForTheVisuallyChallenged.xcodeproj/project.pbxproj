@@ -14,6 +14,7 @@
 		9EA46E5E1ED2DF5800A844C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EA46E5C1ED2DF5800A844C9 /* LaunchScreen.storyboard */; };
 		9EA46E661ED2DFB300A844C9 /* NoteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA46E651ED2DFB300A844C9 /* NoteCollectionViewCell.swift */; };
 		9EA46E681ED36C6D00A844C9 /* NoteContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA46E671ED36C6D00A844C9 /* NoteContentViewController.swift */; };
+		D1327DA91ED4959900496649 /* VoiceCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1327DA81ED4959900496649 /* VoiceCore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9EA46E5F1ED2DF5800A844C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EA46E651ED2DFB300A844C9 /* NoteCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewCell.swift; sourceTree = "<group>"; };
 		9EA46E671ED36C6D00A844C9 /* NoteContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteContentViewController.swift; sourceTree = "<group>"; };
+		D1327DA81ED4959900496649 /* VoiceCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceCore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		9EA46E521ED2DF5800A844C9 /* AudioNotes */ = {
 			isa = PBXGroup;
 			children = (
+				D1327DA81ED4959900496649 /* VoiceCore.swift */,
 				9EA46E531ED2DF5800A844C9 /* AppDelegate.swift */,
 				9EA46E551ED2DF5800A844C9 /* NotesListViewController.swift */,
 				9EA46E571ED2DF5800A844C9 /* Main.storyboard */,
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EA46E661ED2DFB300A844C9 /* NoteCollectionViewCell.swift in Sources */,
+				D1327DA91ED4959900496649 /* VoiceCore.swift in Sources */,
 				9EA46E561ED2DF5800A844C9 /* NotesListViewController.swift in Sources */,
 				9EA46E681ED36C6D00A844C9 /* NoteContentViewController.swift in Sources */,
 				9EA46E541ED2DF5800A844C9 /* AppDelegate.swift in Sources */,
