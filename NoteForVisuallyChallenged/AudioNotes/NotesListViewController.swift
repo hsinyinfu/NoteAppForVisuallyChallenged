@@ -12,6 +12,15 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
     
     let reuseIdentifier = "cell" // cell identifier
     
+    override func viewDidLoad() {
+        // Hide the navigation bar for current view controller
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     @IBOutlet weak var collections: UICollectionView!
     let vc = VoiceCore()
 
@@ -70,6 +79,7 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
         print("You selected cell #\(indexPath.item)!")
         performSegue(withIdentifier: "OpenNote", sender: nil)
     }
+    
     @IBAction func speechBtnTapped(_ sender: Any) {
         for i in 0...self.firstTags.count-1{
             print (i)

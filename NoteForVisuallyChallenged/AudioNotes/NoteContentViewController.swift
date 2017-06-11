@@ -9,12 +9,18 @@
 import UIKit
 
 class NoteContentViewController: UIViewController {
+    
+    override func viewDidLoad(){
+        // Show the navigation bar on other view controllers
+        UINavigationBar.appearance().barTintColor = UIColor(colorLiteralRed: 1/255, green: 1/255, blue: 1/255, alpha: 1)
+        self.navigationController?.isNavigationBarHidden = false
 
+    }
     
     let vc = VoiceCore()
     
     @IBAction func speechBtnTapped(_ sender: Any) {
-        vc.speak("不要問我從哪裡來，我的故鄉在遠方，為什麼流浪？流浪遠方，流浪。")
+        vc.speak("je ne parle francais pas")
         vc.speak("記錄於三月十七日。")
     }
     
