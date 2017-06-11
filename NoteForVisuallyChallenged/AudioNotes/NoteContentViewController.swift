@@ -7,15 +7,40 @@
 //
 
 import UIKit
-
+protocol NoteViewControllerDelegate: AnyObject {
+    func noteViewController(_ noteViewController: NoteContentViewController, didCloseNote note: TextNote)
+}
 class NoteContentViewController: UIViewController {
-
+    weak var delegate: NoteViewControllerDelegate?
+    
+    @IBOutlet weak var titleLabel: UITextField!
+    @IBOutlet weak var contentTextView: UITextView!
+    
+    
+    var note: TextNote? {
+        didSet {
+            guard self.isViewLoaded else { return }
+            self.updateUIElements()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.updateUIElements()
     }
-
+    
+    func updateUIElements() {
+        print(self.note?.tags[0] ?? "no-title")
+        self.titleLabel.text = self.note?.tags[0]
+        print(self.note?.content ?? "try")
+        self.contentTextView.text = self.note?.content ?? "try"
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.note?.content = self.contentTextView.text ?? ""
+        try? self.note?.save()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -11,17 +11,18 @@ import ObjectMapper
 
 
 struct TextNote{ /*: Mappable*/
-    
     var tags : [String] = TextNote.defaultTags()
 
     var content: String = ""
     
+    //var date: String = ""
     var fileURL: URL {
         return TextNote.fileURL(of: self.tags)
     }
     
-    func save() throws {
+    mutating func save() throws {
         try self.content.write(to: self.fileURL, atomically: true, encoding: .utf8)
+       // try self.date.write(to: self.fileURL, atomically: true, encoding: .utf8)
     }
     
 }
@@ -94,14 +95,26 @@ extension TextNote {
     
     static func open(tags: [String]) throws -> TextNote {
         let noteContent = try String(contentsOf: self.fileURL(of: tags), encoding: .utf8)
+        //let date_ = try String(contentsOf: self.fileURL(of: tags), encoding: .utf8)
         return TextNote(tags: tags, content: noteContent)
+        
+    
     }
     
     static func remove(tags: [String]) throws {
         try FileManager.default.removeItem(at: self.fileURL(of: tags))
     }
+    
 }
-
+extension Notification.Name {
+    static let TextNoteDidUpdate = Notification.Name("TextNoteDidUpdate")
+}
+extension TextNote {
+    fileprivate static func postDidUpdateNotification() {
+        let notification = Notification(name: .TextNoteDidUpdate)
+        NotificationQueue.default.enqueue(notification, postingStyle: .asap)
+    }
+}
     // MARK: ObjectMapper protocol
 
 //// not yet finished
