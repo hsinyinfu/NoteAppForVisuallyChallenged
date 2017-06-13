@@ -9,19 +9,20 @@ import Speech
 import AVFoundation
 import UIKit
 
-class VoiceCore:UIViewController, SFSpeechRecognizerDelegate {
+class VoiceButton:UIButton {
     
     //for speech api
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "zh"))
+    let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "zh"))
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
     //for AVFoundation
     let synth = AVSpeechSynthesizer()
     var myUtterance = AVSpeechUtterance(string: "")
-    
-   /*
-    func startRecording() {
+   
+    var recogResult : String?
+   
+    func startRecording(){
         
         if recognitionTask != nil {
             recognitionTask?.cancel()
@@ -55,7 +56,7 @@ class VoiceCore:UIViewController, SFSpeechRecognizerDelegate {
             
             if result != nil {
                 
-             //   self.recogResult.text = result?.bestTranscription.formattedString
+                self.recogResult = result?.bestTranscription.formattedString
                 isFinal = (result?.isFinal)!
             }
             
@@ -66,7 +67,7 @@ class VoiceCore:UIViewController, SFSpeechRecognizerDelegate {
                 self.recognitionRequest = nil
                 self.recognitionTask = nil
                 
-                self.startBtn.isEnabled = true
+                self.isEnabled = true
             }
         })
         
@@ -83,16 +84,17 @@ class VoiceCore:UIViewController, SFSpeechRecognizerDelegate {
             print("audioEngine couldn't start because of an error.")
         }
         
-       // recogResult.text = "Say something, I'm listening!"
+       
         
+        print(self.recogResult ?? "no recogResult")
     }
     
     
     func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
         if available {
-            startBtn.isEnabled = true
+            self.isEnabled = true
         } else {
-            startBtn.isEnabled = false
+            self.isEnabled = false
         }
     }
     
@@ -100,53 +102,64 @@ class VoiceCore:UIViewController, SFSpeechRecognizerDelegate {
     
     
     func load() {
-        startBtn.isEnabled = false  //2
-        speechRecognizer?.delegate = self  //3
-        
-        SFSpeechRecognizer.requestAuthorization { (authStatus) in  //4
-            
-            var isButtonEnabled = false
-            
-            switch authStatus {  //5
-            case .authorized:
-                isButtonEnabled = true
-                
-            case .denied:
-                isButtonEnabled = false
-                print("User denied access to speech recognition")
-                
-            case .restricted:
-                isButtonEnabled = false
-                print("Speech recognition restricted on this device")
-                
-            case .notDetermined:
-                isButtonEnabled = false
-                print("Speech recognition not yet authorized")
-            }
-            
-            OperationQueue.main.addOperation() {
-                self.startBtn.isEnabled = isButtonEnabled
-            }
-        }
+//        self.isEnabled = false  //2
+//        speechRecognizer?.delegate = self  //3
+//        
+//        SFSpeechRecognizer.requestAuthorization { (authStatus) in  //4
+//            
+//            var isButtonEnabled = false
+//            
+//            switch authStatus {  //5
+//            case .authorized:
+//                isButtonEnabled = true
+//                
+//            case .denied:
+//                isButtonEnabled = false
+//                print("User denied access to speech recognition")
+//                
+//            case .restricted:
+//                isButtonEnabled = false
+//                print("Speech recognition restricted on this device")
+//                
+//            case .notDetermined:
+//                isButtonEnabled = false
+//                print("Speech recognition not yet authorized")
+//            }
+//            
+//            OperationQueue.main.addOperation() {
+//                self.isEnabled = isButtonEnabled
+//            }
+//        }
     }
     
+    func mainMenu(){
+        guard !self.synth.isSpeaking else {
+            self.synth.stopSpeaking(at: AVSpeechBoundary.word)
+            return
+        }
+        self.speak("您好，請念數字來選擇功能",rate: 0.55)
+        self.speak("ㄧ、新增筆記", rate:0.5)
+        self.speak("二、列出、選擇筆記", rate:0.5)
+        self.recogTapped()
+        
+    }
     
-    func startBtnTapped(_ sender: AnyObject) {
+    func recogTapped() {
         if audioEngine.isRunning {
             audioEngine.stop()
             recognitionRequest?.endAudio()
-            startBtn.isEnabled = false
-            //  startBtn.setTitle("Start Recording", for: .normal)
+            self.isEnabled = false
+              print("Start Recording")
         } else {
-            startRecording()
-           // startBtn.setTitle("Stop Recording", for: .normal)
+            self.startRecording()
+           print("Stop Recording")
         }
     }
-    */
-    func speak(_ sender: String) {
+    func speak(_ sender: String,rate r : Float) {
         myUtterance = AVSpeechUtterance(string: sender)
         myUtterance.voice =  AVSpeechSynthesisVoice(language: "zh")
-        myUtterance.rate = 0.53
+        myUtterance.rate = r
+        myUtterance.volume = 70.0
         synth.speak(myUtterance)
     }
     

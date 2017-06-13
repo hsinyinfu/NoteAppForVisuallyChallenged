@@ -105,6 +105,7 @@
 				TargetAttributes = {
 					9EA46E4F1ED2DF5700A844C9 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 372SS6GK3K;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -270,6 +271,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 372SS6GK3K;
 				INFOPLIST_FILE = AudioNotes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MAP.NotesForTheVisuallyChallenged;
@@ -282,6 +284,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 372SS6GK3K;
 				INFOPLIST_FILE = AudioNotes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MAP.NotesForTheVisuallyChallenged;

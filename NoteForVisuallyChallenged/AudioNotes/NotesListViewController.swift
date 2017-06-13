@@ -8,12 +8,15 @@
 
 
 import UIKit
-class NotesListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+import Speech
+class NotesListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,SFSpeechRecognizerDelegate{
     
     let reuseIdentifier = "cell" // cell identifier
     
+    
+    @IBOutlet weak var voiceBtn: VoiceButton!
     @IBOutlet weak var collections: UICollectionView!
-    let vc = VoiceCore()
+    
 
     // fake contents' array for testing only.
     // replace the codes to get the actual data later
@@ -70,16 +73,68 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
         print("You selected cell #\(indexPath.item)!")
         performSegue(withIdentifier: "OpenNote", sender: nil)
     }
-    @IBAction func speechBtnTapped(_ sender: Any) {
-        for i in 0...self.firstTags.count-1{
-            print (i)
-            vc.speak("第"+String(i+1)+"則")
-            vc.speak(""+self.dateOrTime[i]+"的筆記，關於")
-            vc.speak(self.firstTags[i])
-            vc.speak(self.secondTags[i])
-            vc.speak(self.thirdTags[i])
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.becomeFirstResponder() // To get shake gesture
+        
+        //for speech api
+        voiceBtn.isEnabled = false  //2
+        voiceBtn.speechRecognizer?.delegate = self  //3
+        
+        SFSpeechRecognizer.requestAuthorization { (authStatus) in  //4
             
+            var isButtonEnabled = false
+            
+            switch authStatus {  //5
+            case .authorized:
+                isButtonEnabled = true
+                
+            case .denied:
+                isButtonEnabled = false
+                print("User denied access to speech recognition")
+                
+            case .restricted:
+                isButtonEnabled = false
+                print("Speech recognition restricted on this device")
+                
+            case .notDetermined:
+                isButtonEnabled = false
+                print("Speech recognition not yet authorized")
+            }
+            
+            OperationQueue.main.addOperation() {
+                self.voiceBtn.isEnabled = isButtonEnabled
+            }
         }
+
+        
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        get {
+            return true
+        }
+    }
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            voiceBtn.recogTapped()
+            print("shake")
+//            print(voiceBtn.recogResult ?? " NO result")
+        }
+    }
+    @IBAction func speechBtnTapped(_ sender: Any) {
+        voiceBtn.mainMenu()
+//            for i in 0...self.firstTags.count-1{
+//                print (i)
+//                let rate = Float(0.57)
+//                voiceBtn.speak("第"+String(i+1)+"則",rate: rate)
+//                voiceBtn.speak(""+self.dateOrTime[i]+"的筆記，關於", rate:rate)
+//                voiceBtn.speak(self.firstTags[i], rate:rate)
+//                voiceBtn.speak(self.secondTags[i], rate:rate)
+//                voiceBtn.speak(self.thirdTags[i], rate:rate)
+//            }
         
     }
 }
