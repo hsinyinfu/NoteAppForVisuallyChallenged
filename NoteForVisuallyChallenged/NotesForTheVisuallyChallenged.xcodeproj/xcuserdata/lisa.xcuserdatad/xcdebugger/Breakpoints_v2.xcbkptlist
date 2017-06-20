@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AudioNotes/NotesListViewController.swift"
-            timestampString = "519669409.216997"
+            timestampString = "519685793.687131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "NotesListViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AudioNotes/NotesListViewController.swift"
-            timestampString = "519670564.961493"
+            timestampString = "519685793.687131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "prepareOpeningNote(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AudioNotes/NotesListViewController.swift"
-            timestampString = "519669409.216997"
+            timestampString = "519685793.687131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,12 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AudioNotes/NotesListViewController.swift"
-            timestampString = "519669409.216997"
+            timestampString = "519685793.687131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "prepareOpeningNote(for:sender:)"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AudioNotes/NotesListViewController.swift"
-            timestampString = "519670564.961493"
+            timestampString = "519685793.687131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "prepareOpeningNote(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>

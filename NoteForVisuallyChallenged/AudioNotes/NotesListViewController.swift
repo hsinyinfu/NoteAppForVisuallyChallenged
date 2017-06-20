@@ -45,13 +45,18 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
     func TextNoteDidUpdate(_ notification: Notification) {
         self.updateNoteTitles()
     }
-    
+
     override var canBecomeFirstResponder: Bool {
         get {
             return true
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateNoteTitles()
+        self.collectionView.reloadData()
+    }
     @IBAction func updateTableViewContent(_ sender: UIRefreshControl) {
         self.updateNoteTitles()
         sender.endRefreshing()
