@@ -9,13 +9,20 @@ import Speech
 import AVFoundation
 import UIKit
 
-protocol VoiceCoreDelegate {
-    func messageData(data: AnyObject)
+protocol VoiceCoreDelegate: AnyObject {
+    func writeText(_ text :String?)
+    func createNewNote()
 }
-
+//func writeText(_ text :String?){
+//    guard text else{
+//        return
+//    }
+//    self.label.text  = text!
+//}
 class VoiceCore:NSObject,AVSpeechSynthesizerDelegate,SFSpeechRecognizerDelegate {
     
     //for speech api
+    var delegate : VoiceCoreDelegate?
     let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "zh"))
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
@@ -131,6 +138,7 @@ class VoiceCore:NSObject,AVSpeechSynthesizerDelegate,SFSpeechRecognizerDelegate 
             if result != nil {
                 print("is recording" + (result?.bestTranscription.formattedString)!)
                 self.recogResult = result?.bestTranscription.formattedString
+                self.delegate?.writeText(self.recogResult)
                 isFinal = (result?.isFinal)!
             }
             
@@ -183,6 +191,7 @@ class VoiceCore:NSObject,AVSpeechSynthesizerDelegate,SFSpeechRecognizerDelegate 
     
     
     func mainMenu(_ tutorial :Bool = true  ){
+        delegate?.writeText("TETE")
         if self.synth.isSpeaking {
             print("isSpeaking")
 //            self.synth.stopSpeaking(at: AVSpeechBoundary.word)
@@ -243,6 +252,7 @@ class VoiceCore:NSObject,AVSpeechSynthesizerDelegate,SFSpeechRecognizerDelegate 
     func menu(_ mode : String){
         if mode == "1" {
             print("Enter mode 1")
+            self.delegate?.createNewNote()
             queue.async{
                 self.speak("搖動來結束語音輸入。。。。請念出筆記內容：", rate : 0.5)
                 self.playAudio("start")

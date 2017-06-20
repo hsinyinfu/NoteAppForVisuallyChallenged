@@ -8,7 +8,7 @@
 
 
 import UIKit
-class NotesListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class NotesListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, VoiceCoreDelegate {
     
     let reuseIdentifier = "cell" // cell identifier
     let vc = VoiceCore()
@@ -31,6 +31,7 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
     override func viewDidLoad() {
         super.viewDidLoad()
         self.updateNoteTitles()
+        vc.delegate = self
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(NotesListViewController.TextNoteDidUpdate(_:)),
                                                name: .TextNoteDidUpdate,
@@ -159,5 +160,13 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
     @IBAction func speechBtnTapped(_ sender: Any) {
 //        vc.menu("1")
         vc.mainMenu()
+    }
+    func writeText(_ text: String?) {
+        print("œœœ∑œq´œ´ƒ®ßƒåß∂ƒåß∂ƒåß∂ƒåß∂ƒåß∂ƒåß∂ƒßƒQWEQWEQWEQW")
+    }
+    func createNewNote() {
+        print("create new node by voice")
+        performSegue(withIdentifier: "CreateNote", sender: nil)
+
     }
 }
