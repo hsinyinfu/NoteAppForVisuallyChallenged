@@ -19,7 +19,7 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
             }
         }
     }
-
+    
     override func viewDidLoad() {
         // Hide the navigation bar for current view controller
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
                                                selector: #selector(NotesListViewController.TextNoteDidUpdate(_:)),
                                                name: .TextNoteDidUpdate,
                                                object: nil)
-
+        
     }
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -44,7 +44,7 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     func updateNoteTitles() {
-        self.noteTags = TextNote.tagsOfSavedNotes()
+        self.noteTags = TextNote.getTagsOfSavedNotes()
     }
     
     // get the number of the items
@@ -135,7 +135,7 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
         let noteViewController = segue.destination as! NoteContentViewController
         let senderIndexPath = self.collectionView.indexPath(for: sender)!
         let selectedTitle = self.noteTags[senderIndexPath.row]
-        noteViewController.note = try? TextNote.open(tags: selectedTitle)
+        noteViewController.note = try! TextNote.open(tags: selectedTitle)
         print(noteViewController.note?.tags ?? "aaaaaaaa")
         print(noteViewController.note?.content ?? "aaaaaaaa")
         noteViewController.delegate = self as? NoteViewControllerDelegate

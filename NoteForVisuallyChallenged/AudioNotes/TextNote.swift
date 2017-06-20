@@ -22,12 +22,13 @@ struct TextNote : Mappable{
     var tags : [String] = TextNote.defaultTags()
 
     var content: String = "content..."
-
+    
     var date = TextNote.getDateAndTime()
     
     var fileURL: URL {
         return TextNote.fileURL(of: self.tags)
     }
+    
     
     mutating func save() throws {
         
@@ -127,7 +128,6 @@ extension TextNote {
         NotificationQueue.default.enqueue(notification, postingStyle: .asap)
     }
 }
-
 
 
 // MARK: - ObjectMapper protocol
