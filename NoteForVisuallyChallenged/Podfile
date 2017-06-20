@@ -1,0 +1,8 @@
+platform :ios, '9.0'
+use_frameworks!
+
+
+target 'NotesForTheVisuallyChallenged' do
+  pod 'ObjectMapper', '~> 2.2.7'
+
+end

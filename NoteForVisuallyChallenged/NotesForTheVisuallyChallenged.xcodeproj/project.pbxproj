@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		559153D614173B1127F4498C /* Pods_NotesForTheVisuallyChallenged.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC441819F5F3655D3249720A /* Pods_NotesForTheVisuallyChallenged.framework */; };
 		9EA46E541ED2DF5800A844C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA46E531ED2DF5800A844C9 /* AppDelegate.swift */; };
 		9EA46E561ED2DF5800A844C9 /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA46E551ED2DF5800A844C9 /* NotesListViewController.swift */; };
 		9EA46E591ED2DF5800A844C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EA46E571ED2DF5800A844C9 /* Main.storyboard */; };
@@ -14,14 +15,14 @@
 		9EA46E5E1ED2DF5800A844C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EA46E5C1ED2DF5800A844C9 /* LaunchScreen.storyboard */; };
 		9EA46E661ED2DFB300A844C9 /* NoteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA46E651ED2DFB300A844C9 /* NoteCollectionViewCell.swift */; };
 		9EA46E681ED36C6D00A844C9 /* NoteContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA46E671ED36C6D00A844C9 /* NoteContentViewController.swift */; };
-		D1327DA91ED4959900496649 /* VoiceCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1327DA81ED4959900496649 /* VoiceCore.swift */; };
-		D16324471EF6B2D700F457D1 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D16324451EF6B2D700F457D1 /* start.mp3 */; };
-		D16324481EF6B2D700F457D1 /* end.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D16324461EF6B2D700F457D1 /* end.mp3 */; };
-		D1AFF44A1EF0FA2D00C03504 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1AFF4491EF0FA2D00C03504 /* AVFoundation.framework */; };
-		D1AFF44C1EF0FA3500C03504 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1AFF44B1EF0FA3500C03504 /* Speech.framework */; };
+		D1F69E5C1EF933B5003537A0 /* VoiceCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F69E591EF933B5003537A0 /* VoiceCore.swift */; };
+		D1F69E5D1EF933B5003537A0 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1F69E5A1EF933B5003537A0 /* start.mp3 */; };
+		D1F69E5E1EF933B5003537A0 /* end.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1F69E5B1EF933B5003537A0 /* end.mp3 */; };
+		DC96681E1EE593D100653D9E /* TextNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC96681D1EE593D100653D9E /* TextNote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27CF991E6D5F9FCA6797EDFA /* Pods-NotesForTheVisuallyChallenged.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotesForTheVisuallyChallenged.release.xcconfig"; path = "Pods/Target Support Files/Pods-NotesForTheVisuallyChallenged/Pods-NotesForTheVisuallyChallenged.release.xcconfig"; sourceTree = "<group>"; };
 		9EA46E501ED2DF5800A844C9 /* NotesForTheVisuallyChallenged.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesForTheVisuallyChallenged.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EA46E531ED2DF5800A844C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EA46E551ED2DF5800A844C9 /* NotesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewController.swift; sourceTree = "<group>"; };
@@ -31,11 +32,12 @@
 		9EA46E5F1ED2DF5800A844C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EA46E651ED2DFB300A844C9 /* NoteCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewCell.swift; sourceTree = "<group>"; };
 		9EA46E671ED36C6D00A844C9 /* NoteContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteContentViewController.swift; sourceTree = "<group>"; };
-		D1327DA81ED4959900496649 /* VoiceCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceCore.swift; sourceTree = "<group>"; };
-		D16324451EF6B2D700F457D1 /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
-		D16324461EF6B2D700F457D1 /* end.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = end.mp3; sourceTree = "<group>"; };
-		D1AFF4491EF0FA2D00C03504 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		D1AFF44B1EF0FA3500C03504 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
+		D1F69E591EF933B5003537A0 /* VoiceCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceCore.swift; sourceTree = "<group>"; };
+		D1F69E5A1EF933B5003537A0 /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
+		D1F69E5B1EF933B5003537A0 /* end.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = end.mp3; sourceTree = "<group>"; };
+		DC96681D1EE593D100653D9E /* TextNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextNote.swift; sourceTree = "<group>"; };
+		DF867F66534F218B7CEDAA44 /* Pods-NotesForTheVisuallyChallenged.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotesForTheVisuallyChallenged.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NotesForTheVisuallyChallenged/Pods-NotesForTheVisuallyChallenged.debug.xcconfig"; sourceTree = "<group>"; };
+		FC441819F5F3655D3249720A /* Pods_NotesForTheVisuallyChallenged.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotesForTheVisuallyChallenged.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,20 +45,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1AFF44C1EF0FA3500C03504 /* Speech.framework in Frameworks */,
-				D1AFF44A1EF0FA2D00C03504 /* AVFoundation.framework in Frameworks */,
+				559153D614173B1127F4498C /* Pods_NotesForTheVisuallyChallenged.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35CCA90692ECC95618FFC1C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF867F66534F218B7CEDAA44 /* Pods-NotesForTheVisuallyChallenged.debug.xcconfig */,
+				27CF991E6D5F9FCA6797EDFA /* Pods-NotesForTheVisuallyChallenged.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4B309E3629F83030D47A2A01 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC441819F5F3655D3249720A /* Pods_NotesForTheVisuallyChallenged.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9EA46E471ED2DF5700A844C9 = {
 			isa = PBXGroup;
 			children = (
 				9EA46E521ED2DF5800A844C9 /* AudioNotes */,
 				9EA46E511ED2DF5800A844C9 /* Products */,
-				D1AFF4481EF0FA2D00C03504 /* Frameworks */,
+				35CCA90692ECC95618FFC1C4 /* Pods */,
+				4B309E3629F83030D47A2A01 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,12 +90,13 @@
 		9EA46E521ED2DF5800A844C9 /* AudioNotes */ = {
 			isa = PBXGroup;
 			children = (
-				D16324451EF6B2D700F457D1 /* start.mp3 */,
-				D16324461EF6B2D700F457D1 /* end.mp3 */,
-				D1327DA81ED4959900496649 /* VoiceCore.swift */,
+				D1F69E591EF933B5003537A0 /* VoiceCore.swift */,
+				D1F69E5A1EF933B5003537A0 /* start.mp3 */,
+				D1F69E5B1EF933B5003537A0 /* end.mp3 */,
 				9EA46E531ED2DF5800A844C9 /* AppDelegate.swift */,
 				9EA46E551ED2DF5800A844C9 /* NotesListViewController.swift */,
 				9EA46E571ED2DF5800A844C9 /* Main.storyboard */,
+				DC96681D1EE593D100653D9E /* TextNote.swift */,
 				9EA46E671ED36C6D00A844C9 /* NoteContentViewController.swift */,
 				9EA46E651ED2DFB300A844C9 /* NoteCollectionViewCell.swift */,
 				9EA46E5A1ED2DF5800A844C9 /* Assets.xcassets */,
@@ -86,15 +106,6 @@
 			path = AudioNotes;
 			sourceTree = "<group>";
 		};
-		D1AFF4481EF0FA2D00C03504 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D1AFF44B1EF0FA3500C03504 /* Speech.framework */,
-				D1AFF4491EF0FA2D00C03504 /* AVFoundation.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,9 +113,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9EA46E621ED2DF5800A844C9 /* Build configuration list for PBXNativeTarget "NotesForTheVisuallyChallenged" */;
 			buildPhases = (
+				65D2B4B984F56E1C6A109223 /* [CP] Check Pods Manifest.lock */,
 				9EA46E4C1ED2DF5700A844C9 /* Sources */,
 				9EA46E4D1ED2DF5700A844C9 /* Frameworks */,
 				9EA46E4E1ED2DF5700A844C9 /* Resources */,
+				D6AFB929AFF4A762E09215D4 /* [CP] Embed Pods Frameworks */,
+				1C22FE1D76B974F9A0F46E26 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -127,7 +141,6 @@
 				TargetAttributes = {
 					9EA46E4F1ED2DF5700A844C9 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = Q2WJ6KN92U;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -156,8 +169,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EA46E5E1ED2DF5800A844C9 /* LaunchScreen.storyboard in Resources */,
-				D16324471EF6B2D700F457D1 /* start.mp3 in Resources */,
-				D16324481EF6B2D700F457D1 /* end.mp3 in Resources */,
+				D1F69E5D1EF933B5003537A0 /* start.mp3 in Resources */,
+				D1F69E5E1EF933B5003537A0 /* end.mp3 in Resources */,
 				9EA46E5B1ED2DF5800A844C9 /* Assets.xcassets in Resources */,
 				9EA46E591ED2DF5800A844C9 /* Main.storyboard in Resources */,
 			);
@@ -165,13 +178,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1C22FE1D76B974F9A0F46E26 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NotesForTheVisuallyChallenged/Pods-NotesForTheVisuallyChallenged-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65D2B4B984F56E1C6A109223 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D6AFB929AFF4A762E09215D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NotesForTheVisuallyChallenged/Pods-NotesForTheVisuallyChallenged-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9EA46E4C1ED2DF5700A844C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9EA46E661ED2DFB300A844C9 /* NoteCollectionViewCell.swift in Sources */,
-				D1327DA91ED4959900496649 /* VoiceCore.swift in Sources */,
+				D1F69E5C1EF933B5003537A0 /* VoiceCore.swift in Sources */,
+				DC96681E1EE593D100653D9E /* TextNote.swift in Sources */,
 				9EA46E561ED2DF5800A844C9 /* NotesListViewController.swift in Sources */,
 				9EA46E681ED36C6D00A844C9 /* NoteContentViewController.swift in Sources */,
 				9EA46E541ED2DF5800A844C9 /* AppDelegate.swift in Sources */,
@@ -293,14 +355,12 @@
 		};
 		9EA46E631ED2DF5800A844C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF867F66534F218B7CEDAA44 /* Pods-NotesForTheVisuallyChallenged.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEBUG_ACTIVITY_MODE = "";
-				"DEBUG_ACTIVITY_MODE[sdk=iphonesimulator*]" = disable;
-				DEVELOPMENT_TEAM = Q2WJ6KN92U;
 				INFOPLIST_FILE = AudioNotes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = QQ.NotesForTheVisuallyChallenged;
+				PRODUCT_BUNDLE_IDENTIFIER = MAP.NotesForTheVisuallyChallenged;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -308,13 +368,12 @@
 		};
 		9EA46E641ED2DF5800A844C9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27CF991E6D5F9FCA6797EDFA /* Pods-NotesForTheVisuallyChallenged.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEBUG_ACTIVITY_MODE = "";
-				DEVELOPMENT_TEAM = Q2WJ6KN92U;
 				INFOPLIST_FILE = AudioNotes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = QQ.NotesForTheVisuallyChallenged;
+				PRODUCT_BUNDLE_IDENTIFIER = MAP.NotesForTheVisuallyChallenged;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
