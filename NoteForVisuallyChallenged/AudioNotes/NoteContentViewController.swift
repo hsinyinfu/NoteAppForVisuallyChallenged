@@ -19,6 +19,7 @@ class NoteContentViewController: UIViewController {
     @IBOutlet weak var secondTag: UITextField!
     @IBOutlet weak var firstTag: UITextField!
     @IBOutlet weak var contentTextView: UITextView!
+
     var note: TextNote? {
         didSet {
             guard self.isViewLoaded else { return }
@@ -30,6 +31,7 @@ class NoteContentViewController: UIViewController {
         super.viewDidLoad()
         self.updateUIElements()
     }
+    
     func updateUIElements() {
         //print(self.note?.tags[0] ?? "no-title")
         self.firstTag.text = self.note?.tags[0]
@@ -42,6 +44,7 @@ class NoteContentViewController: UIViewController {
         }
         //print(self.note?.content ?? "try")
         self.contentTextView.text = self.note?.content
+
     }
     
     override func viewDidDisappear(_ animated: Bool) {
