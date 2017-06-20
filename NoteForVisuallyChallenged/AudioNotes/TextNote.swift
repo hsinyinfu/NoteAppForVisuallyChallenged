@@ -21,7 +21,7 @@ struct TextNote : Mappable{
     
     var tags : [String] = TextNote.defaultTags()
 
-    var content: String = ""
+    var content: String = "content..."
     
     var date = TextNote.getDateAndTime()
     
