@@ -18,6 +18,8 @@
 		D1F69E5C1EF933B5003537A0 /* VoiceCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F69E591EF933B5003537A0 /* VoiceCore.swift */; };
 		D1F69E5D1EF933B5003537A0 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1F69E5A1EF933B5003537A0 /* start.mp3 */; };
 		D1F69E5E1EF933B5003537A0 /* end.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1F69E5B1EF933B5003537A0 /* end.mp3 */; };
+		D1F69E601EF9368F003537A0 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F69E5F1EF9368F003537A0 /* Speech.framework */; };
+		D1F69E621EF93697003537A0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F69E611EF93696003537A0 /* AVFoundation.framework */; };
 		DC96681E1EE593D100653D9E /* TextNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC96681D1EE593D100653D9E /* TextNote.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,8 @@
 		D1F69E591EF933B5003537A0 /* VoiceCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceCore.swift; sourceTree = "<group>"; };
 		D1F69E5A1EF933B5003537A0 /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
 		D1F69E5B1EF933B5003537A0 /* end.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = end.mp3; sourceTree = "<group>"; };
+		D1F69E5F1EF9368F003537A0 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
+		D1F69E611EF93696003537A0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DC96681D1EE593D100653D9E /* TextNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextNote.swift; sourceTree = "<group>"; };
 		DF867F66534F218B7CEDAA44 /* Pods-NotesForTheVisuallyChallenged.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotesForTheVisuallyChallenged.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NotesForTheVisuallyChallenged/Pods-NotesForTheVisuallyChallenged.debug.xcconfig"; sourceTree = "<group>"; };
 		FC441819F5F3655D3249720A /* Pods_NotesForTheVisuallyChallenged.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotesForTheVisuallyChallenged.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1F69E621EF93697003537A0 /* AVFoundation.framework in Frameworks */,
+				D1F69E601EF9368F003537A0 /* Speech.framework in Frameworks */,
 				559153D614173B1127F4498C /* Pods_NotesForTheVisuallyChallenged.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,6 +70,8 @@
 		4B309E3629F83030D47A2A01 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D1F69E611EF93696003537A0 /* AVFoundation.framework */,
+				D1F69E5F1EF9368F003537A0 /* Speech.framework */,
 				FC441819F5F3655D3249720A /* Pods_NotesForTheVisuallyChallenged.framework */,
 			);
 			name = Frameworks;

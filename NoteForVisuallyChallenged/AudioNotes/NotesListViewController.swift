@@ -11,6 +11,7 @@ import UIKit
 class NotesListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     let reuseIdentifier = "cell" // cell identifier
+    let vc = VoiceCore()
     
     @IBOutlet weak var collectionView: UICollectionView!
     var refreshControl: UIRefreshControl!
@@ -154,5 +155,8 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
     func noteViewController(_ noteViewController: NoteContentViewController, didCloseNote note: TextNote) {
         var noteTemp : TextNote = note
         try? noteTemp.save()
+    }
+    @IBAction func speechBtnTapped(_ sender: Any) {
+        vc.mainMenu()
     }
 }
