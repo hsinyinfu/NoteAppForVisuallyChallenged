@@ -10,10 +10,10 @@ import UIKit
 protocol NoteViewControllerDelegate: AnyObject {
     func noteViewController(_ noteViewController: NoteContentViewController, didCloseNote note: TextNote)
 }
-class NoteContentViewController: UIViewController {
+class NoteContentViewController: UIViewController, VCDelegate {
     
     weak var delegate: NoteViewControllerDelegate?
-    
+    let vc = VoiceCore()
     
     @IBOutlet weak var thirdTag: UITextField!
     @IBOutlet weak var secondTag: UITextField!
@@ -28,7 +28,15 @@ class NoteContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        vc.delegateC = self
+         self.becomeFirstResponder() // To get shake gesture
         self.updateUIElements()
+    }
+    override var canBecomeFirstResponder: Bool {
+        get {
+            return true
+        }
     }
     func updateUIElements() {
         //print(self.note?.tags[0] ?? "no-title")
@@ -53,8 +61,31 @@ class NoteContentViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        // to get shake
+        if motion == .motionShake {
+            print("shake")
+            vc.shake()
+        }
+    }
+    func writeText(_ text :String?){
+        print("write text")
+
+        contentTextView.text  = text
+    }
     
-    
+    @IBAction func speechTapped(_ sender: Any) {
+        print("@@tapped")
+        var text = firstTag.text ?? "" + " ，， "
+        text += secondTag.text ?? "" + "，，"
+        text +=  thirdTag.text ?? "" + "。。。。"
+        text +=  contentTextView.text ?? ""
+        vc.speak(text, rate:0.45)
+    }
+    func callRead() {
+        print("called read")
+        vc.read()
+    }
     /*
      // MARK: - Navigation
      

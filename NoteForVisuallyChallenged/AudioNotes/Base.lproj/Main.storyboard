@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nuZ-jO-NEs">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,11 +20,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1H-JE-tx8">
-                                <rect key="frame" x="142.66666666666669" y="580" width="129.00000000000006" height="148"/>
+                                <rect key="frame" x="95.5" y="412" width="129" height="148"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="t1H-JE-tx8" secondAttribute="height" multiplier="129:148" id="17e-G8-Cjq"/>
                                     <constraint firstAttribute="height" constant="148" id="gLh-mo-Jt3"/>
@@ -37,7 +37,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQy-sZ-5B1">
-                                <rect key="frame" x="271" y="614" width="97" height="80"/>
+                                <rect key="frame" x="224" y="446" width="97" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="Ylq-OH-7EL"/>
                                 </constraints>
@@ -49,7 +49,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7r-60-laq">
-                                <rect key="frame" x="47" y="614" width="96" height="80"/>
+                                <rect key="frame" x="0.0" y="446" width="96" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="96" id="HKV-EC-qvq"/>
                                 </constraints>
@@ -58,7 +58,7 @@
                                 </state>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="H9K-Tr-pCl">
-                                <rect key="frame" x="20" y="71" width="374" height="501"/>
+                                <rect key="frame" x="16" y="71" width="288" height="333"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="1ui-5Z-kvk">
                                     <size key="itemSize" width="175" height="175"/>
@@ -68,7 +68,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="ify-GS-7qj" customClass="NoteCollectionViewCell" customModule="NotesForTheVisuallyChallenged" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
+                                        <rect key="frame" x="56.5" y="0.0" width="175" height="175"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
@@ -178,11 +178,11 @@
                         <viewControllerLayoutGuide type="bottom" id="REH-g6-CJE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="61j-Vq-2U3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hV8-O1-haf" colorLabel="IBBuiltInLabel-Purple">
-                                <rect key="frame" x="142.66666666666669" y="580" width="129.00000000000006" height="148"/>
+                                <rect key="frame" x="95.5" y="412" width="129" height="148"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="129.00000000000006" id="Q6c-jE-kzC"/>
                                     <constraint firstAttribute="width" secondItem="hV8-O1-haf" secondAttribute="height" multiplier="129:148" id="Vgf-TP-U66"/>
@@ -193,10 +193,11 @@
                                 </state>
                                 <connections>
                                     <action selector="speechBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oVk-zD-fRB"/>
+                                    <action selector="speechTapped:" destination="6pd-xt-ES5" eventType="touchUpInside" id="A3c-Bx-M8X"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wds-O9-kgm">
-                                <rect key="frame" x="271.66666666666669" y="614" width="97" height="80"/>
+                                <rect key="frame" x="224.5" y="446" width="97" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="LcG-5p-U4U"/>
                                     <constraint firstAttribute="height" constant="80" id="W3i-UZ-z2O"/>
@@ -206,7 +207,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgK-tG-qdf">
-                                <rect key="frame" x="47.666666666666657" y="614" width="96" height="80"/>
+                                <rect key="frame" x="0.5" y="446" width="96" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="96" id="4LL-mZ-C5B"/>
                                     <constraint firstAttribute="height" constant="80" id="OwS-nv-7cD"/>
@@ -217,7 +218,7 @@
                                 </state>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZP7-21-hJ5">
-                                <rect key="frame" x="20" y="235" width="374" height="337"/>
+                                <rect key="frame" x="20" y="235" width="284" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -277,14 +278,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRp-9P-NeC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3231.884057971015" y="45.652173913043484"/>
+            <point key="canvasLocation" x="3230.625" y="45.422535211267608"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NGE-xJ-gZE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nuZ-jO-NEs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="amp-j2-Gfn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="amp-j2-Gfn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>

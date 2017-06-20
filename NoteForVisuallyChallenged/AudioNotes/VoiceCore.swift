@@ -13,16 +13,18 @@ protocol VoiceCoreDelegate: AnyObject {
 //func writeText(_ text :String?)
     func createNewNote()
 }
-//func writeText(_ text :String?){
-//    guard text else{
-//        return
-//    }
-//    self.label.text  = text!
-//}
+protocol VCDelegate : AnyObject {
+    func writeText(_ text :String?)
+    func callRead()
+}
+
+
 class VoiceCore:NSObject,AVSpeechSynthesizerDelegate,SFSpeechRecognizerDelegate {
     
     //for speech api
-    var delegate : VoiceCoreDelegate?
+    weak var delegate : VoiceCoreDelegate?
+    weak var delegateC : VCDelegate?
+    
     let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "zh"))
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
@@ -47,6 +49,7 @@ class VoiceCore:NSObject,AVSpeechSynthesizerDelegate,SFSpeechRecognizerDelegate 
         //for speech api
         //   voiceBtn.isEnabled = false  //2
         speechRecognizer?.delegate = self  //3
+        
         SFSpeechRecognizer.requestAuthorization { (authStatus) in  //4
             
             //            var isButtonEnabled = false
@@ -138,7 +141,7 @@ class VoiceCore:NSObject,AVSpeechSynthesizerDelegate,SFSpeechRecognizerDelegate 
             if result != nil {
                 print("is recording" + (result?.bestTranscription.formattedString)!)
                 self.recogResult = result?.bestTranscription.formattedString
-//                self.delegate?.writeText(self.recogResult)
+                self.delegateC?.writeText(self.recogResult)
                 isFinal = (result?.isFinal)!
             }
             
@@ -191,7 +194,7 @@ class VoiceCore:NSObject,AVSpeechSynthesizerDelegate,SFSpeechRecognizerDelegate 
     
     
     func mainMenu(){
-//        delegate?.writeText("TETE")
+//        self.delegateC?.writeText("TETE")
         if self.synth.isSpeaking {
             print("isSpeaking")
 //            self.synth.stopSpeaking(at: AVSpeechBoundary.word)
@@ -215,7 +218,6 @@ class VoiceCore:NSObject,AVSpeechSynthesizerDelegate,SFSpeechRecognizerDelegate 
             queue.async {
                 self.speak("請在逼聲後念數字來選擇，，再按按鈕結束，，或搖動手機直接進行語音輸入。。。。功能：，一、新增筆記，，二、列出所有筆記",rate: 0.53)
                 self.playAudio("start")
-                    self.recogTapped()
             }
             queue.asyncAfter(deadline: DispatchTime.now() + .seconds(5), execute: {
                 print("enter")
@@ -226,7 +228,7 @@ class VoiceCore:NSObject,AVSpeechSynthesizerDelegate,SFSpeechRecognizerDelegate 
     }
     
     func shake(){
-        //        delegate?.writeText("TETE")
+//                delegateC?.writeText("TETE")
         if self.synth.isSpeaking {
             print("isSpeaking")
             return
@@ -253,6 +255,28 @@ class VoiceCore:NSObject,AVSpeechSynthesizerDelegate,SFSpeechRecognizerDelegate 
             }
         }
     }
+    
+    func read(){
+        //                delegateC?.writeText("TETE")
+        if self.synth.isSpeaking {
+            print("isSpeaking")
+            return
+        }
+        else if self.audioEngine.isRunning{
+            self.recogTapped()
+            self.playAudio("end")
+        }
+        else{
+            queue.async {
+                self.playAudio("start")
+            }
+            queue.async{
+                print("enter")
+                self.recogTapped()
+            }
+        }
+    }
+    
 
     
     func menuCondition(){
@@ -266,30 +290,28 @@ class VoiceCore:NSObject,AVSpeechSynthesizerDelegate,SFSpeechRecognizerDelegate 
             menu("2")
         }
         else {
-            queue.async{
-                self.speak("請輸入正確的選項。。", rate : 0.5)
-                self.playAudio("start")
-            }
-            queue.asyncAfter(deadline: DispatchTime.now() + .seconds(5), execute: {
-                self.recogTapped()
-                while !self.recognitionTask!.isFinishing{}
-            })
+            print("else")
+//            queue.async{
+//                self.speak("請輸入正確的選項。。", rate : 0.5)
+//                self.playAudio("start")
+//            }
+//            queue.asyncAfter(deadline: DispatchTime.now() + .seconds(5), execute: {
+//                self.recogTapped()
+//            })
             
         }
     }
     func menu(_ mode : String){
+        self.recogResult = ""
+        
         if mode == "1" {
             print("Enter mode 1")
             self.delegate?.createNewNote()
             queue.async{
-                self.speak("搖動來結束語音輸入。。。。請念出筆記內容：", rate : 0.5)
-                self.playAudio("start")
+                self.speak("搖動來開始或結束語音輸入", rate : 0.5)
+//                self.playAudio("start")
             }
-            
-            queue.asyncAfter(deadline: DispatchTime.now() + .seconds(5), execute: {
-                print("enter")
-                self.recogTapped()
-            })
+            self.delegateC?.callRead()
             print("End mode 1")
 //            queue.asyncAfter(deadline: DispatchTime.now() + .seconds(5), execute: {
 //                print("çççççççççenter@@@")
