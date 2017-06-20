@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4204E6281EF946070061E8D2 /* TextNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4204E6271EF946070061E8D2 /* TextNote.swift */; };
+		42137BB01EF98A58002420FE /* tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42137BAF1EF98A58002420FE /* tags.swift */; };
+		747D078700722D73CCB5ED9A /* Pods_NotesForTheVisuallyChallenged.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C03EE3FA31C4D4C9663141 /* Pods_NotesForTheVisuallyChallenged.framework */; };
 		9EA46E541ED2DF5800A844C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA46E531ED2DF5800A844C9 /* AppDelegate.swift */; };
 		9EA46E561ED2DF5800A844C9 /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA46E551ED2DF5800A844C9 /* NotesListViewController.swift */; };
 		9EA46E591ED2DF5800A844C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EA46E571ED2DF5800A844C9 /* Main.storyboard */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4204E6271EF946070061E8D2 /* TextNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextNote.swift; sourceTree = "<group>"; };
+		42137BAF1EF98A58002420FE /* tags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tags.swift; sourceTree = "<group>"; };
+		486AF0790EBDD8BE22A75F50 /* Pods-NotesForTheVisuallyChallenged.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotesForTheVisuallyChallenged.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NotesForTheVisuallyChallenged/Pods-NotesForTheVisuallyChallenged.debug.xcconfig"; sourceTree = "<group>"; };
 		9EA46E501ED2DF5800A844C9 /* NotesForTheVisuallyChallenged.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesForTheVisuallyChallenged.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EA46E531ED2DF5800A844C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EA46E551ED2DF5800A844C9 /* NotesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewController.swift; sourceTree = "<group>"; };
@@ -27,7 +33,9 @@
 		9EA46E5F1ED2DF5800A844C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EA46E651ED2DFB300A844C9 /* NoteCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewCell.swift; sourceTree = "<group>"; };
 		9EA46E671ED36C6D00A844C9 /* NoteContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteContentViewController.swift; sourceTree = "<group>"; };
+		B8E02D027A1F95DBF3B10D73 /* Pods-NotesForTheVisuallyChallenged.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotesForTheVisuallyChallenged.release.xcconfig"; path = "Pods/Target Support Files/Pods-NotesForTheVisuallyChallenged/Pods-NotesForTheVisuallyChallenged.release.xcconfig"; sourceTree = "<group>"; };
 		D1327DA81ED4959900496649 /* VoiceCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceCore.swift; sourceTree = "<group>"; };
+		D9C03EE3FA31C4D4C9663141 /* Pods_NotesForTheVisuallyChallenged.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotesForTheVisuallyChallenged.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				747D078700722D73CCB5ED9A /* Pods_NotesForTheVisuallyChallenged.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4073DDCC3BFF04599A50F2E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				486AF0790EBDD8BE22A75F50 /* Pods-NotesForTheVisuallyChallenged.debug.xcconfig */,
+				B8E02D027A1F95DBF3B10D73 /* Pods-NotesForTheVisuallyChallenged.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6E1AAB0617F38F3CCEFA9CE9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9C03EE3FA31C4D4C9663141 /* Pods_NotesForTheVisuallyChallenged.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9EA46E471ED2DF5700A844C9 = {
 			isa = PBXGroup;
 			children = (
 				9EA46E521ED2DF5800A844C9 /* AudioNotes */,
 				9EA46E511ED2DF5800A844C9 /* Products */,
+				4073DDCC3BFF04599A50F2E7 /* Pods */,
+				6E1AAB0617F38F3CCEFA9CE9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,11 +92,13 @@
 				9EA46E531ED2DF5800A844C9 /* AppDelegate.swift */,
 				9EA46E551ED2DF5800A844C9 /* NotesListViewController.swift */,
 				9EA46E571ED2DF5800A844C9 /* Main.storyboard */,
+				4204E6271EF946070061E8D2 /* TextNote.swift */,
 				9EA46E671ED36C6D00A844C9 /* NoteContentViewController.swift */,
 				9EA46E651ED2DFB300A844C9 /* NoteCollectionViewCell.swift */,
 				9EA46E5A1ED2DF5800A844C9 /* Assets.xcassets */,
 				9EA46E5C1ED2DF5800A844C9 /* LaunchScreen.storyboard */,
 				9EA46E5F1ED2DF5800A844C9 /* Info.plist */,
+				42137BAF1EF98A58002420FE /* tags.swift */,
 			);
 			path = AudioNotes;
 			sourceTree = "<group>";
@@ -80,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9EA46E621ED2DF5800A844C9 /* Build configuration list for PBXNativeTarget "NotesForTheVisuallyChallenged" */;
 			buildPhases = (
+				FF07098CDAEFAC9CE50A7DE4 /* [CP] Check Pods Manifest.lock */,
 				9EA46E4C1ED2DF5700A844C9 /* Sources */,
 				9EA46E4D1ED2DF5700A844C9 /* Frameworks */,
 				9EA46E4E1ED2DF5700A844C9 /* Resources */,
+				E2DA474946DA8DCC9B992824 /* [CP] Embed Pods Frameworks */,
+				848B83CFCBB91ADB4DAE5ADE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -140,6 +173,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		848B83CFCBB91ADB4DAE5ADE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NotesForTheVisuallyChallenged/Pods-NotesForTheVisuallyChallenged-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2DA474946DA8DCC9B992824 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NotesForTheVisuallyChallenged/Pods-NotesForTheVisuallyChallenged-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF07098CDAEFAC9CE50A7DE4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9EA46E4C1ED2DF5700A844C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -149,6 +230,8 @@
 				D1327DA91ED4959900496649 /* VoiceCore.swift in Sources */,
 				9EA46E561ED2DF5800A844C9 /* NotesListViewController.swift in Sources */,
 				9EA46E681ED36C6D00A844C9 /* NoteContentViewController.swift in Sources */,
+				4204E6281EF946070061E8D2 /* TextNote.swift in Sources */,
+				42137BB01EF98A58002420FE /* tags.swift in Sources */,
 				9EA46E541ED2DF5800A844C9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,6 +351,7 @@
 		};
 		9EA46E631ED2DF5800A844C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 486AF0790EBDD8BE22A75F50 /* Pods-NotesForTheVisuallyChallenged.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AudioNotes/Info.plist;
@@ -280,6 +364,7 @@
 		};
 		9EA46E641ED2DF5800A844C9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8E02D027A1F95DBF3B10D73 /* Pods-NotesForTheVisuallyChallenged.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AudioNotes/Info.plist;
