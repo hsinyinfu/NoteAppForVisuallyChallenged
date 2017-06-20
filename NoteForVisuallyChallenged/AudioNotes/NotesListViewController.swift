@@ -29,27 +29,32 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.updateNoteTitles()
+        self.updateNoteTags()
+        print("view did load")
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(NotesListViewController.TextNoteDidUpdate(_:)),
+                                               selector: #selector(NotesListViewController.textNoteDidUpdate(_:)),
                                                name: .TextNoteDidUpdate,
                                                object: nil)
+        
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    func TextNoteDidUpdate(_ notification: Notification) {
-        self.updateNoteTitles()
+    func textNoteDidUpdate(_ notification: Notification) {
+        print("here")
+        self.updateNoteTags()
     }
     
     @IBAction func updateTableViewContent(_ sender: UIRefreshControl) {
-        self.updateNoteTitles()
+        print("updateTableViewContent is called")
+        self.updateNoteTags()
         sender.endRefreshing()
     }
     
-    func updateNoteTitles() {
-        self.noteTags = TextNote.tagsOfSavedNotes()
+    func updateNoteTags() {
+        print("updateNoteTags is called")
+        self.noteTags = TextNote.getTagsOfSavedNotes()
     }
     
     // get the number of the items
@@ -109,13 +114,27 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
         //let noteTag = self.noteTags[indexPath.row]
         self.collectionView?.reloadData()
         self.collectionView?.performBatchUpdates({
-            self.collectionView?.deleteItems(at: [indexPath])
+        self.collectionView?.deleteItems(at: [indexPath])
         }, completion: { (finished) -> Void in
             if finished {
                 self.collectionView?.reloadData()
             }
         })
     }
+    
+//    func removeNote(at indexPath: IndexPath) {
+//        let noteTags = self.noteTags[indexPath.row]
+//        
+//        self.collectionView.beginUpdates()
+//        defer { self.collectionView.endUpdates() }
+//        do {
+//            try PureTextNote.remove(title: noteTitle)
+//            self.updateNoteTitles()
+//            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+//        } catch {
+//            fatalError("Cannot delete note: \(noteTitle)")
+//        }
+//    }
     
     // MARK: - Storyboard Segue
     
@@ -139,7 +158,7 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
         let noteViewController = segue.destination as! NoteContentViewController
         let senderIndexPath = self.collectionView.indexPath(for: sender)!
         let selectedTitle = self.noteTags[senderIndexPath.row]
-        noteViewController.note = try? TextNote.open(tags: selectedTitle)
+        noteViewController.note = try! TextNote.open(tags: selectedTitle)
         noteViewController.delegate = self as? NoteViewControllerDelegate
     }
     

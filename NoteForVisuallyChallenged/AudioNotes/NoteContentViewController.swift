@@ -39,7 +39,10 @@ class NoteContentViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.note?.content = self.contentTextView.text ?? ""
-        try? self.note?.save()
+//        try? self.note?.save()
+        if self.note != nil {
+            self.delegate?.noteViewController(self, didCloseNote: self.note!)
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
