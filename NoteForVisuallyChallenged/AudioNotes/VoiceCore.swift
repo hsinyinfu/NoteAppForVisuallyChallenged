@@ -182,7 +182,7 @@ class VoiceCore:NSObject,AVSpeechSynthesizerDelegate,SFSpeechRecognizerDelegate 
     }
     
     
-    func mainMenu(){
+    func mainMenu(_ tutorial :Bool = true  ){
         if self.synth.isSpeaking {
             print("isSpeaking")
 //            self.synth.stopSpeaking(at: AVSpeechBoundary.word)
@@ -204,7 +204,9 @@ class VoiceCore:NSObject,AVSpeechSynthesizerDelegate,SFSpeechRecognizerDelegate 
                 return
             }
             queue.async {
+                if tutorial{
                 self.speak("請在逼聲後念數字來選擇，，再按按鈕結束，，或搖動手機直接進行語音輸入。。。。功能：，一、新增筆記，，二、列出、選擇筆記",rate: 0.53)
+                }
                 self.playAudio("start")
             }
             queue.asyncAfter(deadline: DispatchTime.now() + .seconds(5), execute: {
@@ -214,30 +216,7 @@ class VoiceCore:NSObject,AVSpeechSynthesizerDelegate,SFSpeechRecognizerDelegate 
             })
         }
     }
-    
-    func shake(){
-        if self.audioEngine.isRunning{
-            self.recogTapped()
-            self.playAudio("end")
-            if !inMode1{
-                if self.recogResult != nil{
-//                    self.speak(self.recogResult!, rate: 0.45)
-                    menuCondition()
-                }
-            }
-            return
-        }
-        if !inMode1{
-        queue.async{
-            self.playAudio("start")
-        }
-        queue.asyncAfter(deadline: DispatchTime.now() + .seconds(1), execute: {
-            print("enter")
-            self.recogTapped()
-        })
-        }
 
-    }
     
     func menuCondition(){
         let rg = self.recogResult!
