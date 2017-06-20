@@ -31,6 +31,7 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
     override func viewDidLoad() {
         super.viewDidLoad()
         self.updateNoteTitles()
+        self.becomeFirstResponder() // To get shake gesture
         vc.delegate = self
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(NotesListViewController.TextNoteDidUpdate(_:)),
@@ -43,6 +44,12 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     func TextNoteDidUpdate(_ notification: Notification) {
         self.updateNoteTitles()
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        get {
+            return true
+        }
     }
     
     @IBAction func updateTableViewContent(_ sender: UIRefreshControl) {
@@ -75,28 +82,28 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
             cell.thirdTagShown.text = strArray[2]
         }
         cell.dateShown.text = "test"
-
+        
         // design the cell
         cell.layer.borderColor = UIColor.cyan.cgColor
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 8
-  
+        
         /*
+         
+         // change border color when user touches cell
+         func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+         let cell = collectionView.cellForItem(at: indexPath)
+         cell?.layer.borderColor = UIColor.black.cgColor
+         }
+         
+         // change border color back when user releases touch
+         func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+         let cell = collectionView.cellForItem(at: indexPath)
+         cell?.layer.borderColor = UIColor.cyan.cgColor
+         }
+         
+         */
         
-        // change border color when user touches cell
-        func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-            let cell = collectionView.cellForItem(at: indexPath)
-            cell?.layer.borderColor = UIColor.black.cgColor
-        }
-        
-        // change border color back when user releases touch
-        func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-            let cell = collectionView.cellForItem(at: indexPath)
-            cell?.layer.borderColor = UIColor.cyan.cgColor
-        }
- 
-        */
- 
         return cell
     }
     
@@ -157,16 +164,23 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
         var noteTemp : TextNote = note
         try? noteTemp.save()
     }
+    
+    // MARK: - VoiceCore related
     @IBAction func speechBtnTapped(_ sender: Any) {
-//        vc.menu("1")
+        //        vc.menu("1")
         vc.mainMenu()
     }
-    func writeText(_ text: String?) {
-        print("œœœ∑œq´œ´ƒ®ßƒåß∂ƒåß∂ƒåß∂ƒåß∂ƒåß∂ƒåß∂ƒßƒQWEQWEQWEQW")
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        // to get shake
+        if motion == .motionShake {
+            print("shake")
+            vc.shake()
+        }
     }
     func createNewNote() {
         print("create new node by voice")
         performSegue(withIdentifier: "CreateNote", sender: nil)
-
+        
     }
 }

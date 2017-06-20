@@ -10,7 +10,7 @@ import AVFoundation
 import UIKit
 
 protocol VoiceCoreDelegate: AnyObject {
-    func writeText(_ text :String?)
+//func writeText(_ text :String?)
     func createNewNote()
 }
 //func writeText(_ text :String?){
@@ -138,7 +138,7 @@ class VoiceCore:NSObject,AVSpeechSynthesizerDelegate,SFSpeechRecognizerDelegate 
             if result != nil {
                 print("is recording" + (result?.bestTranscription.formattedString)!)
                 self.recogResult = result?.bestTranscription.formattedString
-                self.delegate?.writeText(self.recogResult)
+//                self.delegate?.writeText(self.recogResult)
                 isFinal = (result?.isFinal)!
             }
             
@@ -190,8 +190,8 @@ class VoiceCore:NSObject,AVSpeechSynthesizerDelegate,SFSpeechRecognizerDelegate 
     }
     
     
-    func mainMenu(_ tutorial :Bool = true  ){
-        delegate?.writeText("TETE")
+    func mainMenu(){
+//        delegate?.writeText("TETE")
         if self.synth.isSpeaking {
             print("isSpeaking")
 //            self.synth.stopSpeaking(at: AVSpeechBoundary.word)
@@ -213,16 +213,44 @@ class VoiceCore:NSObject,AVSpeechSynthesizerDelegate,SFSpeechRecognizerDelegate 
                 return
             }
             queue.async {
-                if tutorial{
                 self.speak("請在逼聲後念數字來選擇，，再按按鈕結束，，或搖動手機直接進行語音輸入。。。。功能：，一、新增筆記，，二、列出所有筆記",rate: 0.53)
-                }
                 self.playAudio("start")
+                    self.recogTapped()
             }
             queue.asyncAfter(deadline: DispatchTime.now() + .seconds(5), execute: {
                 print("enter")
                 
                 self.recogTapped()
             })
+        }
+    }
+    
+    func shake(){
+        //        delegate?.writeText("TETE")
+        if self.synth.isSpeaking {
+            print("isSpeaking")
+            return
+        }
+        else if self.audioEngine.isRunning{
+            self.recogTapped()
+            self.playAudio("end")
+            if !inMode1 {
+                if self.recogResult != nil{
+                    menuCondition()
+                }
+            }
+        }
+        else{
+            if inMode1 {
+                return
+            }
+            queue.async {
+                self.playAudio("start")
+            }
+            queue.async{
+                print("enter")
+                self.recogTapped()
+            }
         }
     }
 
