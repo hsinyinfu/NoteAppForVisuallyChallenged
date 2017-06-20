@@ -157,6 +157,7 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
         try? noteTemp.save()
     }
     @IBAction func speechBtnTapped(_ sender: Any) {
+//        vc.menu("1")
         vc.mainMenu()
     }
 }
