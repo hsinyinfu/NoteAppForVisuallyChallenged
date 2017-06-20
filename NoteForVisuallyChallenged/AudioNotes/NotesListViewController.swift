@@ -8,10 +8,19 @@
 
 
 import UIKit
-class NotesListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class NotesListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, VoiceCoreDelegate {
+    
+    let reuseIdentifier = "cell" // cell identifier
+    let vc = VoiceCore()
     
     @IBOutlet weak var collectionView: UICollectionView!
-    let reuseIdentifier = "cell" // cell identifier
+    var refreshControl: UIRefreshControl!
+    // fake contents' array for testing only.
+    // replace the codes to get the actual data later
+    //let firstTags = ["食譜", "學校", "學校", "工讀", "孔雀東南飛", "橄欖樹"]
+    //let secondTags = ["乳酪蛋糕", "期中考範圍", "法文", "班表", "全文", "齊豫"]
+    //let thirdTags = ["", "泰文", "文法", "四月", "", "歌詞"]
+    //let dateOrTime = ["上午 1:18", "昨天", "週二", "3/24", "3/19", "3/17"]
     var noteTags = [[String]]() {
         didSet {
             if self.isViewLoaded {
@@ -19,23 +28,21 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
             }
         }
     }
-    
     override func viewDidLoad() {
-        // Hide the navigation bar for current view controller
         super.viewDidLoad()
         self.updateNoteTitles()
+        vc.delegate = self
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(NotesListViewController.TextNoteDidUpdate(_:)),
                                                name: .TextNoteDidUpdate,
                                                object: nil)
-        
     }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
     func TextNoteDidUpdate(_ notification: Notification) {
         self.updateNoteTitles()
-        
     }
     
     @IBAction func updateTableViewContent(_ sender: UIRefreshControl) {
@@ -68,28 +75,28 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
             cell.thirdTagShown.text = strArray[2]
         }
         cell.dateShown.text = "test"
-        
+
         // design the cell
         cell.layer.borderColor = UIColor.cyan.cgColor
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 8
-        
+  
         /*
-         
-         // change border color when user touches cell
-         func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-         let cell = collectionView.cellForItem(at: indexPath)
-         cell?.layer.borderColor = UIColor.black.cgColor
-         }
-         
-         // change border color back when user releases touch
-         func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-         let cell = collectionView.cellForItem(at: indexPath)
-         cell?.layer.borderColor = UIColor.cyan.cgColor
-         }
-         
-         */
         
+        // change border color when user touches cell
+        func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+            let cell = collectionView.cellForItem(at: indexPath)
+            cell?.layer.borderColor = UIColor.black.cgColor
+        }
+        
+        // change border color back when user releases touch
+        func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+            let cell = collectionView.cellForItem(at: indexPath)
+            cell?.layer.borderColor = UIColor.cyan.cgColor
+        }
+ 
+        */
+ 
         return cell
     }
     
@@ -125,8 +132,7 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
             }
             print("open")
             self.prepareOpeningNote(for: segue, sender: cell)
-        }
-        else {
+        }else {
             super.prepare(for: segue, sender: sender)
         }
     }
@@ -136,15 +142,13 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
         let senderIndexPath = self.collectionView.indexPath(for: sender)!
         let selectedTitle = self.noteTags[senderIndexPath.row]
         noteViewController.note = try! TextNote.open(tags: selectedTitle)
-        print(noteViewController.note?.tags ?? "aaaaaaaa")
-        print(noteViewController.note?.content ?? "aaaaaaaa")
         noteViewController.delegate = self as? NoteViewControllerDelegate
     }
     
     func prepareCreatingNote(for segue: UIStoryboardSegue) {
         let noteContentViewController = segue.destination as! NoteContentViewController
         noteContentViewController.note = TextNote()
-        print(noteContentViewController.note?.content as Any)
+        
     }
     
     // MARK: - NoteViewController Delegate
@@ -152,5 +156,17 @@ class NotesListViewController: UIViewController, UICollectionViewDataSource, UIC
     func noteViewController(_ noteViewController: NoteContentViewController, didCloseNote note: TextNote) {
         var noteTemp : TextNote = note
         try? noteTemp.save()
-    }    
+    }
+    @IBAction func speechBtnTapped(_ sender: Any) {
+//        vc.menu("1")
+        vc.mainMenu()
+    }
+    func writeText(_ text: String?) {
+        print("œœœ∑œq´œ´ƒ®ßƒåß∂ƒåß∂ƒåß∂ƒåß∂ƒåß∂ƒåß∂ƒßƒQWEQWEQWEQW")
+    }
+    func createNewNote() {
+        print("create new node by voice")
+        performSegue(withIdentifier: "CreateNote", sender: nil)
+
+    }
 }
